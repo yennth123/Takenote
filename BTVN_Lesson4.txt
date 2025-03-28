@@ -1,0 +1,25 @@
+1.Sử dụng tất cả các loại bộ chọn CSS để lấy ra các phần tử sau:
+-Lấy ra thẻ div có id = “main” :  page.locator(‘#main’);
+-Lấy ra thẻ div có id= “tutorials_list”: page.locator(‘#tutorials_list’);
+-Lấy ra thẻ div có class = “classic”: page.locator(‘.classic’);
+-Lấy ra tất cả các thẻ có class = “w3-content”: page.locator(‘.w3-content’);
+-Lấy ra tất cả các thẻ có id = “exercises_list” và trước nó là thẻ: page.locator(‘exercises_list’);
+-Lấy ra thẻ có attribute preserveAspectRatio = “none”: page.locator(‘attribute[preserveAspectRatio = “none”]’);
+2.Lấy ra thẻ chứa văn bản "CSS Reference" sử dụng tất cả các loại bộ chọn trên (lấy được theo nhiều cách nhất có thể):
+Có thể tìm kiếm các thẻ có ID hoặc Class chứa  "CSS Reference":
+- Lấy ra các thẻ có class =  "CSS Reference":  page.locator(‘# CSS Reference’);
+- Lấy ra các thẻ có ID =  "CSS Reference":  page.locator(‘. CSS Reference’);
+3. Tìm hiểu các cách lấy bộ chọn CSS theo thuộc tính dưới đây và cho ví dụ:
+-[attribute~=value]: Tìm kiếm tương đối các phần tử có chứa điều kiện riêng lẻ = value
+     Ví dụ: div[class~="classic"] chọn các div có class chứa từ classic 
+-[attribute|=value]: Tìm kiếm các phần tử có từ bắt đầu = value hoặc = value
+Ví dụ: div[class|="classic"] chọn các div có class bắt đầu bằng từ classic hoặc có class = value
+-[attribute^=value]: [attribute|=value]: Tìm kiếm các phần tử có từ bắt đầu = value 
+Ví dụ: div[class|="classic"] chọn các div có class bắt đầu bằng từ classic
+-[attribute$=value][attribute|=value]: Tìm kiếm các phần tử có kết thúc = value
+Ví dụ: div[class|="classic"] chọn các div có class kết thúc bằng từ classic
+-[attribute*=value]:  Tìm kiếm các phần tử có chứa từ = value không quan tâm là ở đầu hay cuối hay giữa mà nó có thể ở bất kì vị trí nào trong thuộc tính
+Ví dụ: div[class|="classic"] chọn các div có class có chứa từ classic ở bất kỳ vị trí nào
+
+
+

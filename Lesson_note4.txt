@@ -1,0 +1,27 @@
+1. Định nghĩa
+HTML (HyperText Markup Language): Ngôn ngữ đánh dấu để xây dựng cấu trúc trang web, gồm các thẻ như <div>, <p>, <a>, <table>,...
+DOM (Document Object Model): Mô hình tài liệu trình duyệt tạo từ HTML, có thể thao tác bằng JavaScript mà không cần chỉnh sửa HTML gốc.
+Locator trong Playwright: Đối tượng dùng để tìm kiếm và thao tác với các phần tử trên trang web. Dùng để thao tác trên các phần tử. Có nhiều phương thức đi kèm như: .click(), .fill(), .hover() Ví dụ:const btn = page.locator('button#submit')
+Selector: Cách xác định phần tử trên trang web thông qua CSS selectors, text selectors hoặc XPath. Dùng trong page.locator(selector) và không có phương thức đi kèm. Ví dụ: 'button#submit'
+2. Các cách xác định Locator có sẵn trong Playwright
+page.getByRole(): Định vị phần tử dựa trên vai trò.
+page.getByText(): Định vị phần tử dựa trên nội dung văn bản.
+page.getByLabel(): Định vị trường form dựa trên label.
+page.getByPlaceholder(): Định vị ô nhập liệu dựa trên placeholder.
+page.getByAltText(): Định vị phần tử (thường là hình ảnh) dựa trên văn bản thay thế (alt text).
+page.getByTitle(): Định vị phần tử dựa trên thuộc tính title.
+page.getByTestId(): Định vị phần tử dựa trên thuộc tính data-testid.
+Khi có nhiều locator, có thể dùng filter để lấy phần tử duy nhất, ví dụ: page.getByRole("button").filter({ hasText: "Submit" }).
+
+3. Tạo Locator sử dụng Selector
+Ngoài các phương pháp có sẵn của Playwright, Locator có thể được tạo bằng CSS Selector hoặc XPath Selector.
+3.1. CSS Selector
+Xác định phần tử dựa vào thuộc tính như id, class, tên thẻ, hoặc thuộc tính cụ thể.
+- Theo ID: #id VD: page.locator(‘#main’); Chọn các phần tử có id = “main”
+- Theo Class: .Class  VD: page.locator(‘ .classic’); Chọn các phần tử có class = “classic”
+- Theo tag name: Tagname VD:  page.locator("div");Chọn tất cả các thẻ div
+- Theo Thuộc tính: [attribute=value] VD:  page.locatoe(‘attribute[preserveAspectRatio="none"]’); Chọn tất cả các phần tử có attribute có preserveAspectRatio="none".
+3.2. XPath Selector
+Có 2 loại XPath:
+Absolute XPath: Xác định phần tử từ gốc HTML, bắt đầu với /. (Tuyệt đối)
+Relative XPath: Xác định phần tử dựa vào mối quan hệ với phần tử khác, bắt đầu với //. (Nên dùng) (Tương đối)
