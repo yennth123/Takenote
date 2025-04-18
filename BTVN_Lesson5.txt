@@ -1,0 +1,42 @@
+1.  Sử dụng xpath với nhiều cách khác nhau để lấy ra các element sau (Lấy theo nhiều cách nhất có thể):
+-Thẻ a có text là “Try it Yourself” ở block CSS Example
+Cách 1: //*[@id="main"]/div[3]/div/div[2]/div/a
+Cách 2: //h3[text()='CSS Example:']/following::a[1]
+Cách 3: //h3[text()='CSS Example:']/parent::div//a[text()='Try it Yourself']
+-Lấy ra thẻ div có class = “w3-content”
+Cách 1: //div[@class='w3-content']
+Cách 2: //div[contains(@class, 'w3-content')]
+-Lấy ra thẻ có text contains “CSS Example” và tổ tiên là thẻ div có class = “w3-content”
+Cách 1: //*[contains(text(), 'CSS Example')][ancestor::div[@class='w3-content']]
+Cách 2: //*[contains(text(), 'CSS Example')][ancestor-or-self::div[@class='w3-content']]
+2. Sử dụng tất cả các loại xpath axes để lấy ra các element sau:
+- Thẻ a có text là “Try it Yourself” ở block CSS Example
++ Lấy theo following: //h3[text()='CSS Example:']/following::a[1]
++ Lấy thep parent: //h3[text()='CSS Example:']/parent::div//a[text()='Try it Yourself']
+- Lấy ra thẻ div có class = “w3-content” và có thẻ con cháu là thẻ có text contains “CSS Example”
++ //div[@class="w3-content"]//*[contains(text(), "CSS Example")]
+
+
+- Lấy ra thẻ div có thẻ con có text contains “CSS Example”
++ //div[.//*[contains(text(), "CSS Example")]]
+3.Lấy ra thẻ chứa text “CSS Reference” sử dụng tất cả các loại selector trên (lấy được theo nhiều cách nhất có thể)
+Cách 1: //a[text()='CSS Reference']
+Cách 2: //a[contains(text(),'CSS Reference')]
+Cách 3: 
+4. Giải thích các xpath dưới đây:
+- //*[normalize-space()="Search"]//button[2]
+Tìm button thứ 2 khi mà bỏ khoảng trắng có text là “Search”
+- //span[@uib-tooltip='Close']
+Tìm các thẻ span có thuộc tính uib-tooltip='Close'
+- //*[normalize-space()='Policy - ${name}']
+Tìm các phần từ mà bỏ khoảng trắng có text là “'Policy - ${name}”
+- //*[@uib-tooltip='View actions']//span
+Tìm các tất cả các thẻ span nằm bên trong thuộc tính uib-tooltip='View actions'
+-//input[@placeholder="Choose email..."]
+Tìm tất cả các thẻ input có thuộc tính placeholder="Choose email..."
+- (//*[descendant::p[normalize-space()="HOST"]]//*[contains(text(), "${hostName }")])[1]
+Tìm phần tử đầu tiên bên trong thẻ chứa text = "${hostName }" và là con của thẻ p mà mà bỏ khoảng trắng có text là “HOST”
+- //*[@role="option"]//descendant::*[contains(text(),'${optionValue}')]
+Tìm các phần tử có chứa text = ${optionValue} là con cháu của các phần tử có thuộc tính role="option"
+-//div[child::label//span[text()="${label}"]]//preceding-sibling::label//input[@type="checkbox"]
+Tìm các thẻ input phần tử có  thuộc tính type="checkbox"] bên trong label là anh chị em của thẻ div có có con là label mà bên trong có span chứa đúng text ${label}

@@ -1,0 +1,25 @@
+Bài 1: Cài đặt & Tạo Project với Playwright
+1. Cài đặt công cụ
+Git: Quản lý mã nguồn 
+VS Code: Trình soạn thảo code 
+Node.js: Chạy JavaScript trên server 
+2. Giới thiệu Playwright
+Framework kiểm thử web đa trình duyệt (Chromium, Firefox, WebKit).
+Hỗ trợ đa nền tảng, tự động chờ, test mobile, ghi video lỗi.
+So với Selenium & Cypress: Dễ cài hơn, hỗ trợ mobile, tự động chờ tốt hơn.
+3. Tạo Project & Push GitHub
+Bước 1: Tạo project
+mkdir my-project && cd my-project  
+npm init playwright@latest  
+npx playwright --version  # Kiểm tra cài đặt  
+Bước 2: Cấu hình SSH
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"  
+cat ~/.ssh/id_rsa.pub  # Lấy key add vào GitHub  
+Bước 3: Push lên GitHub
+git init  
+git add .  
+git commit -m "First commit"  
+git remote add origin <repo-github>  
+git push -u origin main  
+Bài tập
+ Tạo project "take note", ghi lại các bước và push lên GitHub.

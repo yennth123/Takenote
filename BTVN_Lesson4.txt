@@ -9,6 +9,7 @@
 Có thể tìm kiếm các thẻ có ID hoặc Class chứa  "CSS Reference":
 - Lấy ra các thẻ có class =  "CSS Reference":  page.locator(‘# CSS Reference’);
 - Lấy ra các thẻ có ID =  "CSS Reference":  page.locator(‘. CSS Reference’);
+- Lấy theo XPath: page.locator('//input[@type= "CSS Reference"]')
 3. Tìm hiểu các cách lấy bộ chọn CSS theo thuộc tính dưới đây và cho ví dụ:
 -[attribute~=value]: Tìm kiếm tương đối các phần tử có chứa điều kiện riêng lẻ = value
      Ví dụ: div[class~="classic"] chọn các div có class chứa từ classic 

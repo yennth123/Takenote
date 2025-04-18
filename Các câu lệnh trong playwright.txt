@@ -1,0 +1,14 @@
+1. npx playwright test: Chạy cả thư mục test	- Lệnh này cho phép chạy cả thư mục (ví dụ  thư mục tên test) trong project 
+2. npx playwright test {file path/file name}	Chạy với file cụ thể	Lệnh này cho phép chạy 1 file cụ thể (tìm đến tên file hoặc đường dẫn) trong thư mục ví dụ  npx playwright test tests/example.spec.ts chỉ chạy file example.spec.ts trong thư mục tests
+ 3. npx playwright test “{test case title}”	Chạy 1 test case cụ thể	Cái này em có tham khảo trên gg thì câu lệnh sẽ như này: npx playwright test -g "{test case title}" thì em chạy được ạ. Nó cho phép mình chạy 1 testcase cụ thể với title đã nhập. ví dụ: example.spec.ts trong file này có nhiều testcase nhưng nếu chạy npx playwright test -g "has title" thì sẽ chỉ chạy case có title là has title
+4. npx playwright test -- project {firefox/chromium/webkit}	Chạy với 1 trình duyệt cụ thể	Chạy trên 1 trình duyệt cụ thể Ví dụ: npx playwright test --project chromium sẽ chạy test trên trình duyệt Chrome.
+5. npx playwright test --project webkit --project firefox
+	Chạy với nhiều trình duyệt	Chạy test trên nhiều trình duyệt cùng lúc, trong ví dụ này là webkit và firefox. 
+6. npx playwright show-report	Show report	Hiển thị báo cáo kết quả test trên web sau khi các lần test đã được thực hiện.https://prnt.sc/qy2leB0-Gmqg 
+7. npx playwright test {file path/file name} --ui
+	Debug test trong ui mode	Giúp trực tiếp xem các bước trên UI mode
+8. npx playwright test {file path/file name} --debug
+	Debug test với Playwright inspector	Mở Playwright Inspector hiển thị các bước thực hiện test và kết quả test
+9. npx playwright codegen --output=tests/gencode1.spec.ts
+	Gencode	ghi lại tất cả hành động bạn thực hiện trên trình duyệt và tạo mã test tương ứng. Mã này sẽ được lưu vào file tests/gencode1.spec.ts
+Lưu ý: file này không được trùng với những file đã tồn tại trong thư mục
